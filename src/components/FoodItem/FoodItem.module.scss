@@ -1,0 +1,45 @@
+$imgSize: 150px;
+
+.foodItem {
+  background-color: var(--white);
+  border-radius: 10px;
+
+  &__img {
+    min-width: $imgSize;
+    max-width: $imgSize;
+    min-height: $imgSize;
+    max-height: $imgSize;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: relative;
+
+    img {
+      width: auto;
+      height: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  &__content {
+    flex-grow: 2;
+    color: var(--dark);
+  }
+
+  &__distance {
+      color: var(--greyMiddle);
+  }
+
+  &__description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
+  &__company {
+    color: var(--greyLight);
+  }
+}

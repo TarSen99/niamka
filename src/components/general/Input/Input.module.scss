@@ -1,0 +1,38 @@
+.input {
+  position: relative;
+
+  &__placeholder {
+    color: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    cursor: text;
+  }
+
+  &__element {
+    outline: none;
+    border-color: transparent;
+    height: 25px;
+    color: var(--dark);
+
+    &_center {
+      text-align: center;
+    }
+
+    &_right {
+      text-align: right;
+    }
+
+    &.input__element_main-color-placeholder {
+      &::placeholder {
+        color: var(--main);
+      }
+    }
+
+    &.input__element_rounded {
+      border-radius: 50px;
+    }
+  }
+}

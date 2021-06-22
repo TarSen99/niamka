@@ -1,0 +1,25 @@
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    span {
+        height: 2px;
+        border-radius: 2px;
+        background-color: var(--white);
+        display: inline-block;
+        margin: 2px 0;
+
+        &:first-child {
+            width: 14px;
+        }
+
+        &:nth-child(2) {
+            width: 17px;
+        }
+
+        &:last-child {
+            width: 13px;
+        }
+    }
+}

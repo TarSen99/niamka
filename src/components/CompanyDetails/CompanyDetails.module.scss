@@ -1,0 +1,22 @@
+.company {
+    border-radius: 30px;
+    height: 65px;
+    width: 100%;
+    background-color: var(--dark);
+    color: #fff;
+
+    &__image {
+        min-width: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        max-width: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            width: auto;
+            min-width: 100%;
+        }
+    }
+}

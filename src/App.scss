@@ -1,0 +1,21 @@
+.app {
+  padding: 0;
+  background-color: var(--background-dark);
+
+
+  &__content {
+    background-color: var(--background);
+    height: 100vh;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .app {
+    &__content {
+      max-width: 376px;
+      min-width: 376px;
+      margin: 0 auto;
+    }
+  }
+}

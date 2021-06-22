@@ -1,0 +1,19 @@
+@mixin medium {
+  font-weight: 500;
+}
+
+@mixin regular {
+  font-weight: 400;
+}
+
+@mixin thin {
+  font-weight: 300;
+}
+
+@mixin background-grey {
+  background-color: var(--background);
+}
+
+@mixin color-dark {
+  color: var(--dark);
+}

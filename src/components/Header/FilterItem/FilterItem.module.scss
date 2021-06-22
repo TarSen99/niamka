@@ -1,0 +1,38 @@
+.filterItem {
+  color: var(--dark);
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  min-width: 75px;
+
+  &__iconContainer {
+    font-size: 18px;
+    height: 35px;
+    width: 35px;
+    min-width: 35px;
+    min-height: 35px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: background-color 0.2s ease-in;
+  }
+
+  &_active {
+    .filterItem__iconContainer {
+      background-color: var(--yellow);
+    }
+  }
+
+  &:hover {
+    .filterItem__iconContainer {
+      background-color: hsl(var(--white), var(--d), 0);
+    }
+  }
+
+  &_active {
+    &:hover {
+      .filterItem__iconContainer {
+        background-color: #d8bb71;
+      }
+    }
+  }
+}

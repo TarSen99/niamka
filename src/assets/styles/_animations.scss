@@ -1,0 +1,19 @@
+.product-btn-enter {
+  opacity: 0;
+}
+.product-btn-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.product-btn-exit {
+  opacity: 1;
+}
+.product-btn-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+
+.test {
+    font-size: 16px;
+}
