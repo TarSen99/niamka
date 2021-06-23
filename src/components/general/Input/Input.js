@@ -1,17 +1,17 @@
-import React, { useRef } from "react";
+import React, { useRef } from 'react';
 
-import styles from "@/components/general/Input/Input.module.scss";
+import styles from '@/components/general/Input/Input.module.scss';
 
 const handlePlaceholderClick = (ref) => {
   ref.current.focus();
 };
 
 const Input = ({
-  type = "text",
+  type = 'text',
   mainColorPlaceholder = false,
   rounded,
   placeholder,
-  placeholderText = "",
+  placeholderText = '',
   center = false,
   right = false,
   handleOnInput = () => {},
@@ -20,27 +20,27 @@ const Input = ({
 }) => {
   const inputRef = useRef();
 
-  const classNameInput = `${styles.input__element} ${
-    mainColorPlaceholder ? styles["input__element_main-color-placeholder"] : ""
-  } ${rounded ? styles["input__element_rounded"] : ""} ${
-    center ? styles["input__element_center"] : ""
-  } ${right ? styles["input__element_right"] : ""}`;
+  const classNameInput = `${ styles.input__element } ${
+    mainColorPlaceholder ? styles[ 'input__element_main-color-placeholder' ] : ''
+  } ${ rounded ? styles[ 'input__element_rounded' ] : '' } ${
+    center ? styles[ 'input__element_center' ] : ''
+  } ${ right ? styles[ 'input__element_right' ] : '' }`;
 
   return (
-    <span className={styles.input}>
+    <span className={ styles.input }>
       <input
-        className={classNameInput}
-        type={type}
-        placeholder={placeholderText}
-        onInput={(e) => handleOnInput(e.target.value)}
-        value={value}
-        {...rest}
-        ref={inputRef}
+        className={ classNameInput }
+        type={ type }
+        placeholder={ placeholderText }
+        onInput={ (e) => handleOnInput(e.target.value) }
+        value={ value }
+        { ...rest }
+        ref={ inputRef }
       />
       {placeholder && !value && (
         <span
-          onClick={() => handlePlaceholderClick(inputRef)}
-          className={styles.input__placeholder}
+          onClick={ () => handlePlaceholderClick(inputRef) }
+          className={ styles.input__placeholder }
         >
           {placeholder}
         </span>

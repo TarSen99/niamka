@@ -1,4 +1,4 @@
-import styles from "./Badge.module.scss";
+import styles from './Badge.module.scss';
 
 const Badge = ({
   children,
@@ -15,11 +15,11 @@ const Badge = ({
 }) => {
   return (
     <div
-      className={`${styles.badge} ${
+      className={ `${ styles.badge } ${
         absolute && styles.badge_absolute
-      } p-1 px-2 is-inline-block text-center`}
-      style={{
-        backgroundColor: `var(--${color})`,
+      } p-1 px-2 is-inline-block text-center` }
+      style={ {
+        backgroundColor: `var(--${ color })`,
         borderBottomLeftRadius: noBorderBottomLeftRadius && 0,
         borderTopLeftRadius: noBorderTopLeftRadius && 0,
         borderBottomRightRadius: noBorderBottomRightRadius && 0,
@@ -28,7 +28,7 @@ const Badge = ({
         right,
         top,
         bottom,
-      }}
+      } }
     >
       {children}
     </div>

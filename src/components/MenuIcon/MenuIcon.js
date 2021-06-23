@@ -1,10 +1,10 @@
-import styles from "./MenuIcon.module.scss";
+import styles from './MenuIcon.module.scss';
 
 const MenuIcon = () => {
-  const className = `${styles["menu-icon"]}`;
+  const className = `${ styles[ 'menu-icon' ] }`;
 
   return (
-    <button className={className}>
+    <button className={ className }>
       <span></span>
       <span></span>
       <span></span>

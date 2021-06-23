@@ -1,11 +1,11 @@
-import styles from "./CompanyDetails.module.scss";
-import mac from "@/assets/images/mac.png";
+import styles from './CompanyDetails.module.scss';
+import mac from '@/assets/images/mac.png';
 
 const CompanyDetails = () => {
   return (
-    <div className={`${styles.company} p-3 is-flex is-align-items-center`}>
-      <div className={styles.company__image}>
-        <img src={mac} alt="" />
+    <div className={ `${ styles.company } p-3 is-flex is-align-items-center` }>
+      <div className={ styles.company__image }>
+        <img src={ mac } alt="" />
       </div>
 
       <div className="is-flex is-flex-direction-column ml-2">

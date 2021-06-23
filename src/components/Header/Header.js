@@ -1,8 +1,8 @@
-import styles from "./Header.module.scss";
-import MenuIcon from "@/components/MenuIcon/MenuIcon";
-import Input from "@/components/general/Input/Input.js";
-import { FaSearch } from "react-icons/fa";
-import { useState } from "react";
+import styles from './Header.module.scss';
+import MenuIcon from '@/components/MenuIcon/MenuIcon';
+import Input from '@/components/general/Input/Input.js';
+import { FaSearch } from 'react-icons/fa';
+import { useState } from 'react';
 
 const DefaultLeft = () => {
   return <MenuIcon />;
@@ -11,16 +11,16 @@ const DefaultLeft = () => {
 const Header = ({ hasSearch, title, left, right, color, absolute }) => {
   const hasCenter = hasSearch || title;
 
-  const headerClassName = `${styles.header} ${
+  const headerClassName = `${ styles.header } ${
     hasCenter && styles.header_hasCenter
   } ${
     absolute && styles.header_absolute
   } is-flex is-flex-direction-column is-align-items-center`;
 
-  const headerTopSectionClass = `${styles.header__topSection} ${
-    !hasCenter && "is-flex is-justify-content-space-between"
+  const headerTopSectionClass = `${ styles.header__topSection } ${
+    !hasCenter && 'is-flex is-justify-content-space-between'
   } w-100 text-center`;
-  const [search, setSearch] = useState("");
+  const [ search, setSearch ] = useState('');
 
   const handleSearchInput = (v) => {
     setSearch(v);
@@ -28,37 +28,37 @@ const Header = ({ hasSearch, title, left, right, color, absolute }) => {
 
   return (
     <header
-      className={headerClassName}
-      style={{ backgroundColor: `var(--${color})` }}
+      className={ headerClassName }
+      style={ { backgroundColor: `var(--${ color })` } }
     >
-      <div className={headerTopSectionClass}>
-        <div className={`${styles.header__topSectionLeft}`}>
+      <div className={ headerTopSectionClass }>
+        <div className={ `${ styles.header__topSectionLeft }` }>
           {left ? left : <DefaultLeft />}
         </div>
 
-        <span className={`${styles.header__logo} center`}>{title}</span>
+        <span className={ `${ styles.header__logo } center` }>{title}</span>
 
-        <div className={`${styles.header__topSectionRight}`}>{right}</div>
+        <div className={ `${ styles.header__topSectionRight }` }>{right}</div>
       </div>
 
       {hasSearch && (
-        <div className={`${styles["header__bottom-section"]}`}>
-          <Input
+      <div className={ `${ styles[ 'header__bottom-section' ] }` }>
+        <Input
             mainColorPlaceholder
             rounded
             center
-            value={search}
-            handleOnInput={handleSearchInput}
+            value={ search }
+            handleOnInput={ handleSearchInput }
             placeholder={
-              <span className={styles["header__search-placeholder"]}>
-                <span className={styles.header__search_icon}>
+              <span className={ styles[ 'header__search-placeholder' ] }>
+                <span className={ styles.header__search_icon }>
                   <FaSearch />
                 </span>
                 <span>Search</span>
               </span>
             }
           />
-        </div>
+      </div>
       )}
     </header>
   );
