@@ -5,9 +5,14 @@
 
   &__content {
     background-color: var(--background);
-    height: 100vh;
+    height: 100%;
     position: relative;
+  } 
+
+  &__contentWithCheckoutButton{
+    padding-bottom: 80px;
   }
+
 }
 
 @media screen and (min-width: 1200px) {
