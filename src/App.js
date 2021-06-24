@@ -4,12 +4,15 @@ import './App.scss';
 import Home from '@/views/Home/Home.js';
 import Product from '@/views/Product/Product.js';
 import CheckoutButton from '@/components/general/CheckoutButton/CheckoutButton.js';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const products = useSelector(state => state.productReducer.value)
+  
   return (
     <div className="app">
       <Router>
-        <div className="app__content">
+        <div className={ !products.length ? "app__content" : "app__content app__contentWithCheckoutButton" }>
           <Switch>
             <Route path="/about">About</Route>
             <Route path="/product/:id">
