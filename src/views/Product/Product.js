@@ -9,12 +9,11 @@ import GoogleMapReact from 'google-map-react';
 import CompanyDetails from '@/components/CompanyDetails';
 import img from '@/assets/images/product.jpg';
 import FoodListItem from '@/components/Product/FoodListItem/FoodListItem.js';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Slider from 'react-slick';
 import foodItem from '@/assets/images/foodItem.jpg';
-import { CSSTransition } from 'react-transition-group';
-import { useSelector, useDispatch } from 'react-redux';
-import { addProduct, removeProduct } from '@/slices/productSlice.js';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '@/slices/productSlice.js';
 
 const MapPoint = () => {
   return (
@@ -36,15 +35,10 @@ const settings = {
 };
 
 const Product = () => {
-  const products = useSelector((state) => state.productReducer.value);
   const dispatch = useDispatch();
   const [ isLoading, setLoading ] = useState(false);
   // const [ products, setProducts ] = useState([]);
   const [ inProp, setInProp ] = useState(false);
-
-  const addNewProduct = (value) => {
-    dispatch(addProduct(value));
-  };
 
   const defaultMapProps = {
     center: {
@@ -63,10 +57,6 @@ const Product = () => {
       })
     );
   };
-
-  const totalPrice = products.reduce((prev, curr) => {
-    return prev + curr.price;
-  }, 0);
 
   return (
     <div className={ styles.product }>
@@ -135,9 +125,7 @@ const Product = () => {
       </div>
 
       <div
-        className={ `${ styles.bottom } ${
-          products.length && styles.bottom_active
-        } pt-5 mb-5` }
+        className={ `${ styles.bottom } pt-5 mb-5` }
       >
         <Slider { ...settings }>
           <div style={ { width: '150px' } }>
@@ -160,18 +148,6 @@ const Product = () => {
           </div>
         </Slider>
       </div>
-
-      <CSSTransition in={ inProp } timeout={ 200 } classNames="product-btn">
-        <div>
-          {!!products.length && (
-            <div className={ `${ styles.submit_products } fixed-center` }>
-              <Button expanded>
-                Checkout {products.length} item {totalPrice}hrn.
-              </Button>
-            </div>
-          )}
-        </div>
-      </CSSTransition>
     </div>
   );
 };

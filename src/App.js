@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.scss';
 import Home from '@/views/Home/Home.js';
 import Product from '@/views/Product/Product.js';
+import CheckoutButton from '@/components/general/CheckoutButton/CheckoutButton.js';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           </Switch>
         </div>
       </Router>
+
+      <CheckoutButton />
     </div>
   );
 }
