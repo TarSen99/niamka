@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.scss';
 import Home from '@/views/Home/Home.js';
-import Login from '@/components/Login/Login.js';
+import Login from './views/Login/Login.js'
 import Product from '@/views/Product/Product.js';
 import CheckoutButton from '@/components/general/CheckoutButton/CheckoutButton.js';
 import { useSelector } from 'react-redux';
