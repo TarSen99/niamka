@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.scss';
 import Home from '@/views/Home/Home.js';
 import Login from './views/Login/Login.js'
+import SingUp from './views/Login/SingUp.js'
 import Product from '@/views/Product/Product.js';
 import CheckoutButton from '@/components/general/CheckoutButton/CheckoutButton.js';
 import { useSelector } from 'react-redux';
@@ -13,11 +14,14 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <div className={ !products.length ? "app__content" : "app__content app__contentWithCheckoutButton" }>
+        <div className={ !products.length ? 'app__content' : 'app__content app__contentWithCheckoutButton' }>
           <Switch>
             <Route path="/about">About</Route>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/singup">
+              <SingUp />
             </Route>
             <Route path="/product/:id">
               <Product />

@@ -1,4 +1,5 @@
 .loginContainer{
+    justify-content: stretch;
     height: 100vh;
     background-color: #E5E5E5;
 
@@ -10,19 +11,35 @@
             top: 189px;
             left: 51px;
         }
+
         &__burgerImage{
             position: absolute;
             left: 0;
             top: 0;
         }
+
+        &__burgerImageSingUp{
+            position: absolute;
+            left: 215px;
+            top: 180px;
+        }
+
         &__pizzaImage{
             position: absolute;
             right: 0;
         }
+
+        &__pizzaImageSingUp{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
     }
     
     &__inputContainer{
-        height: 100%;
+        position: relative;
+        z-index: 2;
+        height: 71%;
         padding-top: 36px;
         background-color: var(--orange);
         /* border-top-left-radius: horizontal vertical */
@@ -40,8 +57,6 @@
     }
 
     &__buttonContainer{
-        position: absolute;
-        bottom: 0;
         background-color: var(--orange);
         padding: 30px 15px 20px;
     }

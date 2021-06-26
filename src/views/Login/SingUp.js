@@ -1,11 +1,9 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
-import { useDispatch } from 'react-redux';
 import styles from '../Login/Login.module.scss';
 import coffeeBeansImage from '../../assets/images/coffeeBeans.png';
-import pizzaImage from '../../assets/images/pizza.png';
-import burgerImage from '../../assets/images/burger.png';
-import { login } from '../../slices/authSlice';
+import pizzaImage from '../../assets/images/pizzaTop.png';
+import burgerImage from '../../assets/images/burgerButton.png';
 
 const FormInput = ({ field, form, ...props })=>{
   return <input className={ `${ styles.formInput } fz-16 w-100 lh-20` }  { ...field } { ...props } />;
@@ -25,40 +23,41 @@ const validate = (values) => {
   // password
   const passwordRegex = /(?=.*[0-9])/;
   if (!values.password) {
-      errors.password = '*Required';
+      errors.password = 'Required';
   } else if (values.password.length < 8) {
-      errors.password = '*Password must be 8 characters long.';
+      errors.password = 'Password must be 8 characters long.';
   } else if (!passwordRegex.test(values.password)) {
-      errors.password = '*Invalid password. Must contain one number.';
+      errors.password = 'Invalid password. Must contain one number.';
+  }
+
+  if (values.password!==values.repeatedPassword){
+    errors.repeatedPassword = 'Passwords do not match';
   }
   return errors;
 }
 
-const Login = () => {
-    // const count = useSelector((state) => state.counter.value)
-    const dispatch = useDispatch()
-
+const SingUp = () => {
     return (
       <div className={ `${ styles.loginContainer } is-flex is-flex-direction-column` }>
         <Formik
-        initialValues={ { email: '', password: '' } }
+        initialValues={ { email: '', password: '',repeatedPassword: '' } }
         validate={ validate }
         onSubmit={ (values, { setSubmitting }) => {
-          setSubmitting(true);
-            dispatch(login( { email:values.email, password:values.password } )).then(
-              setSubmitting(false)
-            )
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
         } }
       >
           {({ isSubmitting, errors, touched }) => (
             <Form>
               <div className={ `${ styles.loginContainer__header } is-flex is-justify-content-center is-align-items-center` }>
-                <div className={ `${ styles.loginContainer__header__text } fz-40 text-center` }>Hello!</div>
+                <div className={ `${ styles.loginContainer__header__text } fz-40 text-center` }>Welcome!</div>
                 <img className={ styles.loginContainer__header__coffeeBeansImage } src={ coffeeBeansImage } alt="" />
-                <img className={ styles.loginContainer__header__burgerImage } src={ burgerImage } alt="" />
-                <img className={ styles.loginContainer__header__pizzaImage } src={ pizzaImage } alt="" /> 
+                <img className={ styles.loginContainer__header__burgerImageSingUp } src={ burgerImage } alt="" />
+                <img className={ styles.loginContainer__header__pizzaImageSingUp } src={ pizzaImage } alt="" /> 
               </div>
-              <div className={ `${ styles.loginContainer__inputContainer } is-flex is-flex-direction-column is-flex-grow-one` }>
+              <div className={ `${ styles.loginContainer__inputContainer }` }>
                 <div className={ styles.loginContainer__inputContainer__inputGroup }>
                   <label className={ `${ styles.input__label } fz-18 lh-20 w-300` } htmlFor='email'>Email</label>
                   <Field  type="email" name="email" placeholder="Login" component={ FormInput }/>
@@ -69,6 +68,11 @@ const Login = () => {
                   <Field  type="password" name="password" placeholder="Password" component={ FormInput }/>
                   { touched.password && errors.password ? <div className={ `${ styles.errorsMessage } lh-20 fz-18 w-300` }>{errors.password}</div> : null}
                 </div>
+                <div className={ styles.loginContainer__inputContainer__inputGroup }>
+                  <label className={ `${ styles.input__label } fz-18 lh-20 w-300` } htmlFor='repeatedPassword'>Repeat password</label>
+                  <Field  type="password" name="repeatedPassword" placeholder="Repeat password" component={ FormInput }/>
+                  { touched.repeatedPassword && errors.repeatedPassword ? <div className={ `${ styles.errorsMessage } lh-20 fz-18 w-300` }>{errors.repeatedPassword}</div> : null}
+                </div>
               </div>
               <div className={ `${ styles.loginContainer__buttonContainer } w-100 ` }>
                 <button
@@ -76,7 +80,7 @@ const Login = () => {
                   disabled={ isSubmitting }
                   className={ `${ styles.button } w-100 fz-18 text-center px-5` }
                 >
-                  <span className={ styles.button__text }> Login </span>
+                  <span className={ styles.button__text }> SingUp </span>
                 </button>
               </div>
             </Form>
@@ -86,4 +90,4 @@ const Login = () => {
     )
   };
   
-export default Login;
+export default SingUp;
