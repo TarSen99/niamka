@@ -125,7 +125,7 @@ const Product = () => {
       </div>
 
       <div
-        className={ `${ styles.bottom } pt-5 mb-5` }
+        className={ `${ styles.bottom } pt-5` }
       >
         <Slider { ...settings }>
           <div style={ { width: '150px' } }>
