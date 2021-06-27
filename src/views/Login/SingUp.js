@@ -38,8 +38,7 @@ const validate = (values) => {
 
 const SingUp = () => {
     return (
-      <div className={ `${ styles.loginContainer } is-flex is-flex-direction-column` }>
-        <Formik
+      <Formik
         initialValues={ { email: '', password: '',repeatedPassword: '' } }
         validate={ validate }
         onSubmit={ (values, { setSubmitting }) => {
@@ -49,15 +48,16 @@ const SingUp = () => {
           }, 400);
         } }
       >
-          {({ isSubmitting, errors, touched }) => (
-            <Form>
+        {({ isSubmitting, errors, touched }) => (
+          <Form>
+            <div className={ `${ styles.loginContainer } is-flex is-flex-direction-column` }>
               <div className={ `${ styles.loginContainer__header } is-flex is-justify-content-center is-align-items-center` }>
                 <div className={ `${ styles.loginContainer__header__text } fz-40 text-center` }>Welcome!</div>
                 <img className={ styles.loginContainer__header__coffeeBeansImage } src={ coffeeBeansImage } alt="" />
                 <img className={ styles.loginContainer__header__burgerImageSingUp } src={ burgerImage } alt="" />
                 <img className={ styles.loginContainer__header__pizzaImageSingUp } src={ pizzaImage } alt="" /> 
               </div>
-              <div className={ `${ styles.loginContainer__inputContainer }` }>
+              <div className={ `${ styles.loginContainer__inputContainer } is-flex-grow-one` }>
                 <div className={ styles.loginContainer__inputContainer__inputGroup }>
                   <label className={ `${ styles.input__label } fz-18 lh-20 w-300` } htmlFor='email'>Email</label>
                   <Field  type="email" name="email" placeholder="Login" component={ FormInput }/>
@@ -78,15 +78,16 @@ const SingUp = () => {
                 <button
                   type= { 'submit' }
                   disabled={ isSubmitting }
-                  className={ `${ styles.button } w-100 fz-18 text-center px-5` }
+                  className={ `${ styles.loginContainer__buttonContainer__button } w-100 fz-18 text-center px-5` }
                 >
-                  <span className={ styles.button__text }> SingUp </span>
+                  <span className={ styles.loginContainer__buttonContainer__button__text }> SingUp </span>
                 </button>
               </div>
-            </Form>
+            </div>
+          </Form>
         )}
-        </Formik>
-      </div>
+      </Formik>
+      
     )
   };
   

@@ -1,10 +1,9 @@
 .loginContainer{
-    justify-content: stretch;
     height: 100vh;
     background-color: #E5E5E5;
 
     &__header{
-        height: 257px;
+        padding: 106px 136px;
         
         &__coffeeBeansImage{
             position: absolute;
@@ -39,10 +38,8 @@
     &__inputContainer{
         position: relative;
         z-index: 2;
-        height: 71%;
         padding-top: 36px;
         background-color: var(--orange);
-        /* border-top-left-radius: horizontal vertical */
         border-top-left-radius: 150px 44px;
         border-top-right-radius: 150px 44px;
 
@@ -59,17 +56,17 @@
     &__buttonContainer{
         background-color: var(--orange);
         padding: 30px 15px 20px;
+
+        &__button {
+            height: 45px;
+            border-radius: 30px;
+            background-color: var(--white);
+            &__text {
+              color: var(--orange);
+            }
+          }
     }
 }
-
-.button {
-    height: 45px;
-    border-radius: 30px;
-    background-color: var(--white);
-    &__text {
-      color: var(--orange);
-    }
-  }
 
 .formInput{
     height: 50px;
@@ -81,6 +78,5 @@
 }
 
 .errorsMessage{
-    // color: var(--white);
     padding-top: 5px;
 }

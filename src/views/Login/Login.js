@@ -39,8 +39,8 @@ const Login = () => {
     const dispatch = useDispatch()
 
     return (
-      <div className={ `${ styles.loginContainer } is-flex is-flex-direction-column` }>
-        <Formik
+      
+      <Formik
         initialValues={ { email: '', password: '' } }
         validate={ validate }
         onSubmit={ (values, { setSubmitting }) => {
@@ -50,15 +50,16 @@ const Login = () => {
             )
         } }
       >
-          {({ isSubmitting, errors, touched }) => (
-            <Form>
+        {({ isSubmitting, errors, touched }) => (
+          <Form>
+            <div className={ `${ styles.loginContainer } is-flex is-flex-direction-column` }>
               <div className={ `${ styles.loginContainer__header } is-flex is-justify-content-center is-align-items-center` }>
                 <div className={ `${ styles.loginContainer__header__text } fz-40 text-center` }>Hello!</div>
                 <img className={ styles.loginContainer__header__coffeeBeansImage } src={ coffeeBeansImage } alt="" />
                 <img className={ styles.loginContainer__header__burgerImage } src={ burgerImage } alt="" />
                 <img className={ styles.loginContainer__header__pizzaImage } src={ pizzaImage } alt="" /> 
               </div>
-              <div className={ `${ styles.loginContainer__inputContainer } is-flex is-flex-direction-column is-flex-grow-one` }>
+              <div className={ `${ styles.loginContainer__inputContainer } is-flex-grow-one` }>
                 <div className={ styles.loginContainer__inputContainer__inputGroup }>
                   <label className={ `${ styles.input__label } fz-18 lh-20 w-300` } htmlFor='email'>Email</label>
                   <Field  type="email" name="email" placeholder="Login" component={ FormInput }/>
@@ -74,15 +75,15 @@ const Login = () => {
                 <button
                   type= { 'submit' }
                   disabled={ isSubmitting }
-                  className={ `${ styles.button } w-100 fz-18 text-center px-5` }
+                  className={ `${ styles.loginContainer__buttonContainer__button } w-100 fz-18 text-center px-5` }
                 >
-                  <span className={ styles.button__text }> Login </span>
+                  <span className={ styles.loginContainer__buttonContainer__button__text }> Login </span>
                 </button>
               </div>
-            </Form>
+            </div>
+          </Form>
         )}
-        </Formik>
-      </div>
+      </Formik>
     )
   };
   
