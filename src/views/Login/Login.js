@@ -35,7 +35,6 @@ const validate = (values) => {
 }
 
 const Login = () => {
-    // const count = useSelector((state) => state.counter.value)
     const dispatch = useDispatch()
 
     return (

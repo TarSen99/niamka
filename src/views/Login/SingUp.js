@@ -4,6 +4,7 @@ import styles from '../Login/Login.module.scss';
 import coffeeBeansImage from '../../assets/images/coffeeBeans.png';
 import pizzaImage from '../../assets/images/pizzaTop.png';
 import burgerImage from '../../assets/images/burgerButton.png';
+import { useDispatch } from 'react-redux';
 
 const FormInput = ({ field, form, ...props })=>{
   return <input className={ `${ styles.formInput } fz-16 w-100 lh-20` }  { ...field } { ...props } />;
@@ -37,15 +38,17 @@ const validate = (values) => {
 }
 
 const SingUp = () => {
+    const dispatch = useDispatch();
+
     return (
       <Formik
         initialValues={ { email: '', password: '',repeatedPassword: '' } }
         validate={ validate }
         onSubmit={ (values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          // setTimeout(() => {
+          //   alert(JSON.stringify(values, null, 2));
+          //   setSubmitting(false);
+          // }, 400);
         } }
       >
         {({ isSubmitting, errors, touched }) => (
