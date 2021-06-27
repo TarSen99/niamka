@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.scss';
 import Home from '@/views/Home/Home.js';
+import Login from './views/Login/Login.js'
 import Product from '@/views/Product/Product.js';
 import CheckoutButton from '@/components/general/CheckoutButton/CheckoutButton.js';
 import { useSelector } from 'react-redux';
@@ -15,6 +16,9 @@ function App() {
         <div className={ !products.length ? "app__content" : "app__content app__contentWithCheckoutButton" }>
           <Switch>
             <Route path="/about">About</Route>
+            <Route path="/login">
+              <Login />
+            </Route>
             <Route path="/product/:id">
               <Product />
             </Route>

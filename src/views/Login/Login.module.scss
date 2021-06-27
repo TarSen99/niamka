@@ -1,0 +1,71 @@
+.loginContainer{
+    height: 100vh;
+    background-color: #E5E5E5;
+
+    &__header{
+        height: 257px;
+        
+        &__coffeeBeansImage{
+            position: absolute;
+            top: 189px;
+            left: 51px;
+        }
+        &__burgerImage{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        &__pizzaImage{
+            position: absolute;
+            right: 0;
+        }
+    }
+    
+    &__inputContainer{
+        height: 100%;
+        padding-top: 36px;
+        background-color: var(--orange);
+        /* border-top-left-radius: horizontal vertical */
+        border-top-left-radius: 150px 44px;
+        border-top-right-radius: 150px 44px;
+
+        &__inputGroup{
+            padding: 15px 10px 15px;
+            label { 
+                display: block;
+                color: var(--white);
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    &__buttonContainer{
+        position: absolute;
+        bottom: 0;
+        background-color: var(--orange);
+        padding: 30px 15px 20px;
+    }
+}
+
+.button {
+    height: 45px;
+    border-radius: 30px;
+    background-color: var(--white);
+    &__text {
+      color: var(--orange);
+    }
+  }
+
+.formInput{
+    height: 50px;
+    border-radius: 30px;
+    outline: none;
+    border-color: transparent;
+    background: var(--white);
+    padding-left: 19px;
+}
+
+.errorsMessage{
+    // color: var(--white);
+    padding-top: 5px;
+}
